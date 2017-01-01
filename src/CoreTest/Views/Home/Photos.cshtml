@@ -1,0 +1,19 @@
+﻿@model CoreTest.Models.Gallery
+
+@{
+    ViewData["Title"] = "Photos";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<h1>@Model.name</h1>
+
+@foreach (var photo in Model.Photos)
+{
+    <div class="jumbotron">
+        <p>#@photo.id</p>
+        <h2>@photo.name</h2>
+        <a href="~/images/@photo.imageFileName"><img src="~/images/@photo.imageFileName" alt="@photo.name" class="img-thumbnail"/> </a>
+        <p>@photo.caption</p>
+    </div>
+}
